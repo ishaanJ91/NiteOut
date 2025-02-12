@@ -5,11 +5,11 @@ import { getFirestore } from "firebase/firestore";
 
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyD9gpgLG8rF9Ix3vuYG_7oRVEnjKZP3CZc",
-  authDomain: "com.anonymous.mobile.firebaseapp.com",
-  projectId: "niteout-6c93f",
-  storageBucket: "com-anonymous-mobile.appspot.com",
-  appId: "1:575342652161:ios:5af9429a5c937965998900",
+  apiKey: "AIzaSyCsXXjAFlESkikhj7aWi3hs7vFlrNj3soQ",
+  // authDomain: "com.anonymous.mobile.firebaseapp.com",
+  projectId: "niteout-49dc5",
+  // storageBucket: "com-anonymous-mobile.appspot.com",
+  appId: "1:77171862574:ios:09ee78bf87992d1d2103bf",
 };
 
 // Initialize Firebase
