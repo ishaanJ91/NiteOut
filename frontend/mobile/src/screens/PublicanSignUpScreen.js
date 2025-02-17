@@ -27,14 +27,14 @@ const PublicanSignUpScreen = ({ navigation }) => {
                     {/* Full Name Input */}
                     <TextInput
                         style={styles.input}
-                        placeholder="Full Name"
+                        placeholder="Pub Name"
                         placeholderTextColor="#999"
                     />
 
                     {/* Email Input */}
                     <TextInput
                         style={styles.input}
-                        placeholder="Email"
+                        placeholder="Phone Number"
                         placeholderTextColor="#999"
                         keyboardType="email-address"
                     />
@@ -42,7 +42,7 @@ const PublicanSignUpScreen = ({ navigation }) => {
                     {/* Password Input */}
                     <TextInput
                         style={styles.input}
-                        placeholder="Password"
+                        placeholder="Pub Address"
                         placeholderTextColor="#999"
                         secureTextEntry
                     />
@@ -50,7 +50,7 @@ const PublicanSignUpScreen = ({ navigation }) => {
                     {/* Verify Password Input */}
                     <TextInput
                         style={styles.input}
-                        placeholder="Confirm Password"
+                        placeholder="Pub Eircode"
                         placeholderTextColor="#999"
                         secureTextEntry
                     />
@@ -101,14 +101,14 @@ const styles = StyleSheet.create({
     },
     backgroundLightBlue: {
         height: "100%",
-        top: "3%",
+        top: "2%",
         borderTopLeftRadius: 42,
         borderTopRightRadius: 42,
         backgroundColor: "#90E0EF",
     },
     backgroundWhite: {
         height: "100%",
-        top: "20%",
+        top: "19%",
         borderTopLeftRadius: 42,
         borderTopRightRadius: 42,
         backgroundColor: "#f8f9fa",
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
         padding: 20,
         borderRadius: 15,
         elevation: 3,
-        top: "5%",
+        top: "4%",
     },
     title: {
         fontSize: 28,
