@@ -44,7 +44,6 @@ const PublicanSignUpScreen = ({ navigation }) => {
     const [modalVisible, setModalVisible] = useState(false);
     const [infoModalVisible, setInfoModalVisible] = useState(false);
 
-    // Error states
     const [pubNameError, setPubNameError] = useState("");
     const [phoneNumberError, setPhoneNumberError] = useState("");
     const [pubAddressError, setPubAddressError] = useState("");
