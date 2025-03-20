@@ -253,7 +253,7 @@ const PublicanSignUpScreen = ({ navigation }) => {
       console.log("✅ Publican details saved to Firestore");
 
       Alert.alert("Success", "Your pub has been registered!");
-      navigation.navigate("Drawer", { screen: "PublicanMainScreen" });
+      navigation.navigate("Drawer", { screen: "Home" });
     } catch (error) {
       console.error("❌ Error type:", typeof error);
       console.error(
