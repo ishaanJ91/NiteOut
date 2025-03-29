@@ -502,7 +502,9 @@ const PublicanSignUpScreen = ({ navigation }) => {
           {/* Footer Container */}
           <View style={styles.footerContainer}>
             <Text style={styles.footerText}>Already have an account? </Text>
-            <TouchableOpacity onPress={() => navigation.navigate("Login")}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("LoginScreen")}
+            >
               <Text style={styles.signInLink}>Log in</Text>
             </TouchableOpacity>
           </View>
