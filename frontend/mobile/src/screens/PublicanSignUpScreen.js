@@ -1,4 +1,14 @@
-import React, { useState, useEffect } from "react";
+import * as ImagePicker from "expo-image-picker";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import {
+  collection,
+  doc,
+  setDoc,
+  query,
+  where,
+  getDocs,
+} from "firebase/firestore";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -11,24 +21,13 @@ import {
   Alert,
 } from "react-native";
 import { SvgXml } from "react-native-svg";
-import * as ImagePicker from "expo-image-picker";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import { auth, db } from "../firebaseConfig";
-import {
-  collection,
-  doc,
-  setDoc,
-  query,
-  where,
-  getDocs,
-} from "firebase/firestore";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 
-import { checkmarkXml } from "../utils/checkmark";
-import { uploadXml } from "../utils/upload";
-import { infoIconXml } from "../utils/infoIcon";
-import BerPicker, { getColorForRating } from "../components/BerPicker";
 import BerDescription from "../components/BerDescription";
+import BerPicker, { getColorForRating } from "../components/BerPicker";
+import { auth, db } from "../firebaseConfig";
+import { checkmarkXml } from "../utils/checkmark";
+import { infoIconXml } from "../utils/infoIcon";
+import { uploadXml } from "../utils/upload";
 
 const PublicanSignUpScreen = ({ navigation }) => {
   const [pub_name, setPubName] = useState("");
@@ -47,7 +46,7 @@ const PublicanSignUpScreen = ({ navigation }) => {
   const [phoneNumberError, setPhoneNumberError] = useState("");
   const [pubAddressError, setPubAddressError] = useState("");
   const [pubEircodeError, setPubEircodeError] = useState("");
-  const [berRatingError, setBerRatingError] = useState("");
+  const [, setBerRatingError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
 
@@ -79,7 +78,7 @@ const PublicanSignUpScreen = ({ navigation }) => {
   const fetchCoordinates = async (eircode) => {
     try {
       const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
-        eircode
+        eircode,
       )}&key=${"AIzaSyBniOy46iJ1dGDJ-bJjJzji9_OfHZkRtc8"}`;
 
       console.log("Fetching from URL:", url);
@@ -102,7 +101,7 @@ const PublicanSignUpScreen = ({ navigation }) => {
         console.error(
           `Geocoding API error: ${data.status} - ${
             data.error_message || "No error message provided"
-          }`
+          }`,
         );
         throw new Error("Failed to fetch coordinates.");
       }
@@ -150,7 +149,7 @@ const PublicanSignUpScreen = ({ navigation }) => {
         console.log("Missing required fields");
         Alert.alert(
           "Missing Information",
-          "Please fill in all fields before signing up."
+          "Please fill in all fields before signing up.",
         );
         return;
       }
@@ -189,7 +188,7 @@ const PublicanSignUpScreen = ({ navigation }) => {
         console.log("Pub already exists");
         Alert.alert(
           "Duplicate Pub",
-          "A pub with this name already exists. Choose another name."
+          "A pub with this name already exists. Choose another name.",
         );
         return;
       }
@@ -200,7 +199,7 @@ const PublicanSignUpScreen = ({ navigation }) => {
       const userCredential = await createUserWithEmailAndPassword(
         auth,
         email,
-        password
+        password,
       );
       const user = userCredential.user;
       console.log("Firebase user created with ID:", user.uid);
@@ -219,7 +218,7 @@ const PublicanSignUpScreen = ({ navigation }) => {
         console.log("Failed to get coordinates");
         Alert.alert(
           "Invalid Eircode",
-          "Could not fetch coordinates. Please check your Eircode."
+          "Could not fetch coordinates. Please check your Eircode.",
         );
         return;
       }
@@ -247,7 +246,7 @@ const PublicanSignUpScreen = ({ navigation }) => {
       // Save to Firestore
       console.log(
         "Saving to Firestore in 'publicans' collection with ID:",
-        user.uid
+        user.uid,
       );
       await setDoc(doc(db, "publicans", user.uid), pubData);
       console.log("✅ Publican details saved to Firestore");
@@ -258,7 +257,7 @@ const PublicanSignUpScreen = ({ navigation }) => {
       console.error("❌ Error type:", typeof error);
       console.error(
         "❌ Error signing up publican:",
-        error.message || "No error message"
+        error.message || "No error message",
       );
       console.error("❌ Error code:", error.code || "No error code");
       console.error("❌ Stack trace:", error.stack || "No stack trace");
@@ -273,7 +272,7 @@ const PublicanSignUpScreen = ({ navigation }) => {
       } else {
         Alert.alert(
           "Error",
-          `Something went wrong. Error: ${error.message || "Unknown error"}`
+          `Something went wrong. Error: ${error.message || "Unknown error"}`,
         );
       }
     }
