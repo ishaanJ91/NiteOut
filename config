@@ -1,0 +1,10 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = true
+	ignorecase = true
+	precomposeunicode = true
+[remote "origin"]
+	url = https://gitlab.scss.tcd.ie/sweng25_group13/sweng25_group13_pubgamenightfinder.git
+	fetch = +refs/*:refs/*
+	mirror = true
