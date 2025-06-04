@@ -2,9 +2,9 @@
 
 **NiteOut** is a mobile app that helps users find, host, and join pub games in their area. Whether you're looking for a trivia night, a poker game, or a casual darts competition, NiteOut connects you with the best local events.
 
-# 👨‍💻 Contributor Spotlight
+# 👨‍💻 My Contributions to the project
 
-This project includes significant contributions by [Your Name], who worked on the project via GitLab. Key contributions include:
+This project includes significant contributions made by me on the project via GitLab. Key contributions include:
 
 - Developed the `Gamer` and `Game` classes, adding friend-management and game type features.
 - Set up and integrated Firebase and Firestore for the React Native app.
