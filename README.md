@@ -2,16 +2,32 @@
 
 **NiteOut** is a mobile app that helps users find, host, and join pub games in their area. Whether you're looking for a trivia night, a poker game, or a casual darts competition, NiteOut connects you with the best local events.
 
+# 👨‍💻 Contributor Spotlight
+
+This project includes significant contributions by [Your Name], who worked on the project via GitLab. Key contributions include:
+
+- Developed the `Gamer` and `Game` classes, adding friend-management and game type features.
+- Set up and integrated Firebase and Firestore for the React Native app.
+- Implemented API calls using Firestore and ensured seamless backend integration.
+- Added a backend refresh-timer to support green computing.
+- Created unit tests using `pytest`, achieving 95%+ test coverage.
+- Built role-based Firebase Authentication with 99% uptime and access control.
+- Contributed to frontend and backend development, including:
+  - Ban-player page
+  - Publican event page and shareable game code
+  - Publican home screen
+- Fixed several API calls and configured NGROK for local development.
+
 ---
 
 ## 📋 Prerequisites
 
 Before you begin, ensure you have the following installed:
 
--   **Python** (latest version recommended) → [Download here](https://www.python.org/downloads/)
--   **Node.js** (latest LTS version recommended) → [Download here](https://nodejs.org/)
--   **Ngrok** (for exposing the backend, might get flagged as virus) → [Download here](https://ngrok.com/download)
--   **Expo Go app** (to test the mobile app) → Available on [iOS](https://apps.apple.com/us/app/expo-go/id982107779)
+- **Python** (latest version recommended) → [Download here](https://www.python.org/downloads/)
+- **Node.js** (latest LTS version recommended) → [Download here](https://nodejs.org/)
+- **Ngrok** (for exposing the backend, might get flagged as virus) → [Download here](https://ngrok.com/download)
+- **Expo Go app** (to test the mobile app) → Available on [iOS](https://apps.apple.com/us/app/expo-go/id982107779)
 
 > ⚠️ **Important:** This project currently supports **iOS only**. You need either an iPhone or Xcode Simulator (macOS).
 
@@ -40,9 +56,9 @@ Open the project directory in **Windows Powershell**
 
 This will:
 
--   Install all dependencies for backend (Flask) and frontend (React Native).
--   Set up a virtual environment for Python.
--   Install necessary Node.js modules for React Native.
+- Install all dependencies for backend (Flask) and frontend (React Native).
+- Set up a virtual environment for Python.
+- Install necessary Node.js modules for React Native.
 
 ---
 
@@ -119,7 +135,7 @@ Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted -Force
 
 ### Setup file stopped working?
 
--   After running the setup file once make sure to open a new powershell window for it to work
+- After running the setup file once make sure to open a new powershell window for it to work
 
 ### No module named ...
 
@@ -143,17 +159,17 @@ source venv/bin/activate  # Mac/Linux
 This is a very common issue on Windows. It is caused when the installation process doesn't update the system's PATH environment variable.
 For Python & Pip:
 
--   If Python is installed using the default settings, it should be found in: C:\Users\YourUsername\AppData\Local\Programs\Python\PythonXX (where XX is the version)
+- If Python is installed using the default settings, it should be found in: C:\Users\YourUsername\AppData\Local\Programs\Python\PythonXX (where XX is the version)
 
 For NGROK:
 
--   The NGROK.exe will be by default found in your downloads folder. You will need to create a folder somewhere safe that you will be able to access easily.
--   After creating this folder you will need to move the NGROK.exe file from your downloads to this new folder. For example "C:\Program Files\ngrok" where ngrok is the name of the folder and inside is ngrok.exe
+- The NGROK.exe will be by default found in your downloads folder. You will need to create a folder somewhere safe that you will be able to access easily.
+- After creating this folder you will need to move the NGROK.exe file from your downloads to this new folder. For example "C:\Program Files\ngrok" where ngrok is the name of the folder and inside is ngrok.exe
 
 Adding to System Path Variables:
 
--   Open system variables by searching "environment variables" in the windows search and clicking the "Environment Variables..." button.
--   Under System Variables, scroll down and find "Path" and then click edit. Click new and then paste corresponding path to the module you are missing (one new entry per path):
+- Open system variables by searching "environment variables" in the windows search and clicking the "Environment Variables..." button.
+- Under System Variables, scroll down and find "Path" and then click edit. Click new and then paste corresponding path to the module you are missing (one new entry per path):
 
 ```sh
 C:\Users\YourUsername\AppData\Local\Programs\Python\PythonXX\  # When Python is not recognized
@@ -161,11 +177,11 @@ C:\Users\YourUsername\AppData\Local\Programs\Python\PythonXX\Scripts\  # When pi
 C:\Users\YourUsername\YourPathToNgrok\  # When NGROK is not recognized
 ```
 
--   Click "OK" to save
+- Click "OK" to save
 
 ### Ngrok error?
 
--   Ensure your Flask server is running **before** starting Ngrok.
+- Ensure your Flask server is running **before** starting Ngrok.
 
 ### npm Issues?
 
@@ -177,7 +193,7 @@ npm cache clean --force
 
 ### Expo not detecting your device?
 
--   Make sure your phone and computer are on the same Wi-Fi network.
+- Make sure your phone and computer are on the same Wi-Fi network.
 
 ### Expo not building/Lan Issues?
 
@@ -193,9 +209,9 @@ npx expo start -tunnel
 
 If you encounter this error message, it typically indicates an issue with your NGROK setup. Here are a few common causes:
 
--   NGROK was started before running Flask: Ensure that your Flask server is running before starting NGROK.
+- NGROK was started before running Flask: Ensure that your Flask server is running before starting NGROK.
 
--   Environments.js not updated with the latest NGROK URL: Make sure you've updated the API_URL in environments.js with the new URL generated by NGROK.
+- Environments.js not updated with the latest NGROK URL: Make sure you've updated the API_URL in environments.js with the new URL generated by NGROK.
 
 ### Just testing?
 
